@@ -30,13 +30,15 @@ const Pokemon = () =>{
                 <Loading />
             }
             <h1>Pokemon</h1>
-            {
-                ListPokemons.map((item,index)=>{
-                    return(
-                        <PokemonComponent key={index} name={item.name} />
-                    )
-                })
-            }
+            <main className="pokemons_list">
+                {
+                    ListPokemons.map((item,index)=>{
+                        return(
+                            <PokemonComponent key={index} name={item.name} />
+                        )
+                    })
+                }
+            </main>
         </Fragment>
     )
 }

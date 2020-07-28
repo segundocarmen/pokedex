@@ -2,6 +2,7 @@ import React,{Fragment,useEffect,useState} from 'react';
 import Loading from '../../../components/Loading/Loading';
 import {GetPokemon} from '../../../api/pokemon';
 import PokemonComponent from '../../../components/Pokemon/Pokemon';
+import './detail.css'
 
 const VerPokemon = (props) =>{
     const [PokemonActual,setPokemonActual] = useState({});
@@ -26,21 +27,13 @@ const VerPokemon = (props) =>{
 
     return(
         <Fragment>
-            {
-                IsLoading && 
-                <Loading />
-            }
-            {PokemonActual.name && <PokemonComponent name={PokemonActual.name} image={PokemonActual.sprites.front_default} />}
-            {PokemonActual.name && 
-                <ul>
-                    {
-                        PokemonActual.abilities.map((item,index)=>{
-                            return (<li> {item.ability.name} </li>)
-                        })
-                    }
-                </ul>
-            }
-            
+            <main className="pokemon_detail">
+                {
+                    IsLoading && 
+                    <Loading />
+                }
+                {PokemonActual.name && <PokemonComponent name={PokemonActual.name} image={PokemonActual.sprites.front_default} />}
+            </main>
         </Fragment>
     )
 }   

@@ -18,7 +18,6 @@ a.name_pokemon:hover{
     background-color: #FC2934;
     border-radius: 1em;
     padding: 1em;
-    box-sizing: border-box;
     display: block;
     margin: 0 auto;
     text-align: center;
